@@ -30,7 +30,7 @@ export class AlexaAdapter extends utils.Adapter {
 	constructor(options: Partial<ioBroker.AdapterOptions> = {}) {
 		super({
 			...options,
-			name: "template",
+			name: "alexa-adapter",
 		});
 		this.on("ready", this.onReady);
 		this.on("objectChange", this.onObjectChange);
