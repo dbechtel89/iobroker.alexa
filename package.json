@@ -18,11 +18,15 @@
     "url": "https://github.com/Author/ioBroker.template"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^1.0.3"
+    "@iobroker/adapter-core": "^1.0.3",
+    "express": "4.16.4",
+    "routing-controllers": "0.7.7",
+    "typedi": "0.8.0"
   },
   "devDependencies": {
     "@types/chai": "^4.1.7",
     "@types/chai-as-promised": "^7.1.0",
+    "@types/express": "4.16.0",
     "@types/gulp": "^4.0.5",
     "@types/mocha": "^5.2.5",
     "@types/node": "^10.12.18",

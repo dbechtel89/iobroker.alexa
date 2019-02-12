@@ -5,6 +5,7 @@
 // The adapter-core module gives you access to the core ioBroker functions
 // you need to create an adapter
 import * as utils from "@iobroker/adapter-core";
+import { AlexaRestService } from "./lib/alexa-rest.service";
 
 // Load your modules here, e.g.:
 // import * as fs from "fs";
@@ -23,8 +24,9 @@ declare global {
 	}
 }
 
-class Template extends utils.Adapter {
+export class AlexaAdapter extends utils.Adapter {
 
+	private alexaRestService: AlexaRestService;
 	constructor(options: Partial<ioBroker.AdapterOptions> = {}) {
 		super({
 			...options,
@@ -43,6 +45,7 @@ class Template extends utils.Adapter {
 	private async onReady() {
 		// Initialize your adapter here
 
+		this.alexaRestService = new AlexaRestService(this);
 		// The adapters config (in the instance object everything under the attribute "native") is accessible via
 		// this.config:
 		this.log.info("config test1: " + this.config.option1);
@@ -148,8 +151,8 @@ class Template extends utils.Adapter {
 
 if (module.parent) {
 	// Export the constructor in compact mode
-	module.exports = (options: Partial<ioBroker.AdapterOptions> | undefined) => new Template(options);
+	module.exports = (options: Partial<ioBroker.AdapterOptions> | undefined) => new AlexaAdapter(options);
 } else {
 	// otherwise start the instance directly
-	(() => new Template())();
+	(() => new AlexaAdapter())();
 }
