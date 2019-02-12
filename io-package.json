@@ -1,6 +1,6 @@
 {
 	"common": {
-		"name": "Alexa",
+		"name": "alexa-adapter",
 		"version": "0.0.1",
 		"news": {
 			"0.0.1": {
@@ -16,7 +16,7 @@
 				"zh-cn": "首次出版"
 			}
 		},
-		"title": "Template (TypeScript)",
+		"title": "Alexa Adapter",
 		"titleLang": {
 			"en": "Template (TypeScript)",
 			"de": "Vorlage (TypeScript)",
