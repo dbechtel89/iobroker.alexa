@@ -17,7 +17,7 @@ const utils = require("@iobroker/adapter-core");
 const alexa_rest_service_1 = require("./lib/alexa-rest.service");
 class AlexaAdapter extends utils.Adapter {
     constructor(options = {}) {
-        super(Object.assign({}, options, { name: "template" }));
+        super(Object.assign({}, options, { name: "alexa-adapter" }));
         this.on("ready", this.onReady);
         this.on("objectChange", this.onObjectChange);
         this.on("stateChange", this.onStateChange);
