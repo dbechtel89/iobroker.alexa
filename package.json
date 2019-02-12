@@ -5,7 +5,7 @@
   "author": {
     "name": "Dominik Bechtel"
   },
-  "homepage": "https://github.com/Author/ioBroker.template",
+  "homepage": "https://github.com/dbechtel89/ioBroker.alexa-adapter",
   "license": "MIT",
   "keywords": [
     "ioBroker",
@@ -15,7 +15,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Author/ioBroker.template"
+    "url": "https://github.com/dbechtel89/ioBroker.alexa-adapter"
   },
   "dependencies": {
     "@iobroker/adapter-core": "^1.0.3",
@@ -84,7 +84,7 @@
     "instrument": true
   },
   "bugs": {
-    "url": "https://github.com/Author/ioBroker.template/issues"
+    "url": "https://github.com/dbechtel89/ioBroker.alexa-adapter/issues"
   },
   "readmeFilename": "README.md"
 }
