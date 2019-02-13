@@ -17,6 +17,7 @@ export class AlexaRestService {
     constructor(private adapter: AlexaAdapter) {
 
         Container.get(Logger).setLogger(adapter.log);
+        Container.get(AdapterHolder).setAdapter(adapter);
 
         this.app = createExpressServer({
             controllers: [__dirname + '/alexa-controller.js'],
@@ -94,6 +95,18 @@ export class Logger {
 
     public info(message: string): void {
         this.delegate.info(message);
+    }
+}
+
+@Service()
+export class AdapterHolder {
+    public setAdapter(adapter: ioBroker.Adapter): void {
+        this.adapter = adapter;
+    }
+    private adapter: ioBroker.Adapter;
+
+    public getAdapter(): ioBroker.Adapter {
+        return this.adapter;
     }
 }
 

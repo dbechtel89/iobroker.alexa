@@ -29,6 +29,7 @@ class AlexaRestService {
     constructor(adapter) {
         this.adapter = adapter;
         typedi_1.Container.get(Logger).setLogger(adapter.log);
+        typedi_1.Container.get(AdapterHolder).setAdapter(adapter);
         this.app = routing_controllers_1.createExpressServer({
             controllers: [__dirname + '/alexa-controller.js'],
             middlewares: [__dirname + '/request-logger.js'],
@@ -101,6 +102,18 @@ Logger = __decorate([
     typedi_1.Service()
 ], Logger);
 exports.Logger = Logger;
+let AdapterHolder = class AdapterHolder {
+    setAdapter(adapter) {
+        this.adapter = adapter;
+    }
+    getAdapter() {
+        return this.adapter;
+    }
+};
+AdapterHolder = __decorate([
+    typedi_1.Service()
+], AdapterHolder);
+exports.AdapterHolder = AdapterHolder;
 let RequestContext = class RequestContext {
     get userProfile() {
         return this._userProfile;

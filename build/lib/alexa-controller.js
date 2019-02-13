@@ -23,9 +23,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const routing_controllers_1 = require("routing-controllers");
 const alexa_rest_service_1 = require("./alexa-rest.service");
 const typedi_1 = require("typedi");
+const alexa_request_handler_1 = require("./request-handler/alexa-request-handler");
 let AlexaController = class AlexaController {
     constructor() {
         this.logger = typedi_1.default.get(alexa_rest_service_1.Logger);
+        this.adapter = typedi_1.default.get(alexa_rest_service_1.AdapterHolder).getAdapter();
     }
     test() {
         return __awaiter(this, void 0, void 0, function* () {
@@ -36,6 +38,9 @@ let AlexaController = class AlexaController {
         return __awaiter(this, void 0, void 0, function* () {
             this.logger.info(`Request for ${userProfile.email}`);
             this.logger.info(JSON.stringify(alexaRequest));
+            alexa_request_handler_1.registeredAlexaRequestHandler.forEach((h) => {
+                h(alexaRequest);
+            });
             return;
         });
     }
