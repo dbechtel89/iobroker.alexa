@@ -17,6 +17,11 @@ export class AlexaController {
     }
 
     @Get()
+    async test(): Promise<string> {
+        return 'Hallo Alexa';
+    }
+
+    @Post()
     async handleRequest(@CurrentUser({ required: true }) userProfile: UserProfile, @Body() alexaRequest: any): Promise<void> {
         this.logger.info(`Request for ${userProfile.email}`);
 
