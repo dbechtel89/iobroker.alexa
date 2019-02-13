@@ -24,6 +24,7 @@ export class AlexaRestService {
             defaultErrorHandler: true,
             currentUserChecker: this.currentUserChecker
         });
+        this.app.listen(8080);
     }
 
     private async currentUserChecker(action: Action): Promise<UserProfile> {
@@ -41,10 +42,6 @@ export class AlexaRestService {
             throw new UnauthorizedError('Invalid Authorization Header');
         }
         return authorizationHeader.substr(7);
-    }
-
-    public run() {
-        this.app.listen(8080);
     }
 }
 

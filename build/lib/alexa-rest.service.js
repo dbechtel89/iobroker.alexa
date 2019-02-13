@@ -35,6 +35,7 @@ class AlexaRestService {
             defaultErrorHandler: true,
             currentUserChecker: this.currentUserChecker
         });
+        this.app.listen(8080);
     }
     currentUserChecker(action) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -51,9 +52,6 @@ class AlexaRestService {
             throw new routing_controllers_1.UnauthorizedError('Invalid Authorization Header');
         }
         return authorizationHeader.substr(7);
-    }
-    run() {
-        this.app.listen(8080);
     }
 }
 exports.AlexaRestService = AlexaRestService;

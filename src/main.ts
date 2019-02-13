@@ -37,6 +37,7 @@ export class AlexaAdapter extends utils.Adapter {
 		this.on("stateChange", this.onStateChange);
 		// this.on("message", this.onMessage);
 		this.on("unload", this.onUnload);
+
 	}
 
 	/**
