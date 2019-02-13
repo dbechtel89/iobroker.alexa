@@ -2,7 +2,8 @@ import {
     CurrentUser,
     Get,
     JsonController,
-    Body
+    Body,
+    Post
 } from 'routing-controllers';
 import { UserProfile, Logger } from './alexa-rest.service';
 import Container from 'typedi';

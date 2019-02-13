@@ -27,6 +27,11 @@ let AlexaController = class AlexaController {
     constructor() {
         this.logger = typedi_1.default.get(alexa_rest_service_1.Logger);
     }
+    test() {
+        return __awaiter(this, void 0, void 0, function* () {
+            return 'Hallo Alexa';
+        });
+    }
     handleRequest(userProfile, alexaRequest) {
         return __awaiter(this, void 0, void 0, function* () {
             this.logger.info(`Request for ${userProfile.email}`);
@@ -37,6 +42,12 @@ let AlexaController = class AlexaController {
 };
 __decorate([
     routing_controllers_1.Get(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], AlexaController.prototype, "test", null);
+__decorate([
+    routing_controllers_1.Post(),
     __param(0, routing_controllers_1.CurrentUser({ required: true })), __param(1, routing_controllers_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [alexa_rest_service_1.UserProfile, Object]),
