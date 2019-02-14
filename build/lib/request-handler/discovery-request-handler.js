@@ -10,11 +10,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const alexa_request_handler_1 = require("./alexa-request-handler");
+const typedi_1 = require("typedi");
+const alexa_rest_service_1 = require("../alexa-rest.service");
 let DiscoveryRequestHandler = class DiscoveryRequestHandler {
     constructor(alexaRequest) {
-        console.log('DiscoveryRequestHandler with: ' + JSON.stringify(alexaRequest));
+        this.logger.info('DiscoveryRequestHandler with: ' + JSON.stringify(alexaRequest));
     }
 };
+__decorate([
+    typedi_1.Inject(),
+    __metadata("design:type", alexa_rest_service_1.Logger)
+], DiscoveryRequestHandler.prototype, "logger", void 0);
 DiscoveryRequestHandler = __decorate([
     alexa_request_handler_1.AlexaRequestHandler(),
     __metadata("design:paramtypes", [Object])

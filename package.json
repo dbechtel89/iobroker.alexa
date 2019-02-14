@@ -1,6 +1,6 @@
 {
   "name": "iobroker.alexa-adapter",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Alexa Adapter for ioBroker with private cloud",
   "author": {
     "name": "Dominik Bechtel"
